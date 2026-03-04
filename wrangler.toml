@@ -1,24 +1,10 @@
-name = "github-stats-proxy"
-type = "service"
-account_id = ""
-workers_dev = true
-route = ""
-zone_id = ""
-
-[env.production]
-name = "github-stats-proxy-prod"
-routes = [
-  { pattern = "stats.pti4kabeats.com/*", zone_id = "" }
-]
-vars = { ENVIRONMENT = "production" }
+# Configuration
 
 [build]
-command = "npm install"
+  command = "npm run build"
 
-[build.upload]
-format = "modules"
-main = "./src/index.js"
+[env]
+  NODE_ENV = "production"
+  VERSION = "1.0.0"
 
-[[env.production.vars]]
-name = "GITHUB_TOKEN"
-text = ""
+# Additional configuration options can be added here.

@@ -1,0 +1,24 @@
+name = "github-stats-proxy"
+type = "service"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[env.production]
+name = "github-stats-proxy-prod"
+routes = [
+  { pattern = "stats.pti4kabeats.com/*", zone_id = "" }
+]
+vars = { ENVIRONMENT = "production" }
+
+[build]
+command = "npm install"
+
+[build.upload]
+format = "modules"
+main = "./src/index.js"
+
+[[env.production.vars]]
+name = "GITHUB_TOKEN"
+text = ""

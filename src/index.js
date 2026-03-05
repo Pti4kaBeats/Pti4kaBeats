@@ -1,6 +1,6 @@
 // ============================================
 // GitHub Stats Proxy Worker для Pti4kaBeats
-// Версия 2.0 - Production Ready
+// Version 2.0
 // ============================================
 
 const CONFIG = {
